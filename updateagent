@@ -1,0 +1,3 @@
+#!/bin/sh
+
+puppet agent --no-daemonize --onetime --verbose

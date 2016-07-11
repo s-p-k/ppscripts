@@ -21,7 +21,7 @@ usage () {
 
 prepare_agent () {
 	echo "$ip" "$dn" >> /etc/hosts
-	sed -i "/\[main\]/a \ \ \ \ $ip" "$PPCONFIG"
+	sed -i "/\[main\]/a \ \ \ \ $dn" "$PPCONFIG"
 	dn="server = $dn"
 
 }

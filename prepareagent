@@ -8,8 +8,9 @@
 # files
 #-------------------------------------------------------------------------------
 
-# puppet config file
+# we are updating puppet config and hosts files
 PPCONFIG="/etc/puppet/puppet.conf"
+HOSTSFILE="/etc/hosts"
 
 #-------------------------------------------------------------------------------
 # functions
@@ -20,7 +21,7 @@ usage () {
 }
 
 prepare_agent () {
-	echo "$ip" "$dn" >> /etc/hosts
+	echo "$ip" "$dn" >> "$HOSTSFILE"
 	sed -i "/\[main\]/a \ \ \ \ $dn" "$PPCONFIG"
 	dn="server = $dn"
 

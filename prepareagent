@@ -20,11 +20,9 @@ usage () {
 }
 
 prepare_agent () {
-	ip=$3
-	dn=$2
-	dn="server = $dn"
-	sed -i "/\[main\]/a \ \ \ \ $ip" $PPCONFIG
 	echo "$ip" "$dn" >> /etc/hosts
+	sed -i "/\[main\]/a \ \ \ \ $ip" "$PPCONFIG"
+	dn="server = $dn"
 
 }
 
@@ -59,7 +57,9 @@ then
 		printf "Not enough or too many parameters passed to\n" "$0"
 		exit 1
 	fi
-	prepare_agent
+	dn=$2
+	ip=$3
+	prepare_agent "$dn" "$ip"
 	exit 0
 fi
 

@@ -16,7 +16,7 @@ PPCONFIG="/etc/puppet/puppet.conf"
 #-------------------------------------------------------------------------------
 
 usage () {
-	printf "%s [ -m PUPPETMASTER-IP ] [ -h ]\n" "$0"
+	printf "%s [ -m PUPPETMASTER-DOMAIN PUPPETMASTER-IP ] [ -h ]\n" "$0"
 }
 
 prepare_agent () {
@@ -24,6 +24,8 @@ prepare_agent () {
 	dn=$2
 	dn="server = $dn"
 	sed -i "/\[main\]/a \ \ \ \ $ip" $PPCONFIG
+	echo "$ip" "$dn" >> /etc/hosts
+
 }
 
 #-------------------------------------------------------------------------------

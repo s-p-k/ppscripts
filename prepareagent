@@ -3,6 +3,7 @@
 # prepare agent for puppet
 # pass as argument the ip of the master and let the script add the details
 # to /etc/puppet/puppet.conf of agent
+# NOTE: This scrits supposes that puppet is already installed on your agent server
 
 #-------------------------------------------------------------------------------
 # files

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+rpm -ivh https://yum.puppetlabs.com/el/7/products/x86_64/puppetlabs-release-7-12.noarch.rpm
+yum -i install puppet puppet-server
+
